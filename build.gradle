@@ -16,7 +16,7 @@ group = "com.simibubi.create"
 version = mod_version + (dev && buildNumber != null ? "-${buildNumber}" : "")
 
 java {
-    toolchain.languageVersion = JavaLanguageVersion.of(21)
+    toolchain.languageVersion = JavaLanguageVersion.of(25)
     withSourcesJar()
 }
 
@@ -30,7 +30,7 @@ idea {
 }
 
 neoForge {
-    version = neo_version
+    version = "26.1.0"
 
     accessTransformers {
         publish(file("src/main/resources/META-INF/accesstransformer.cfg"))
@@ -38,7 +38,7 @@ neoForge {
 
     if (parchment_version != "none") {
         parchment {
-            minecraftVersion = parchment_minecraft_version == "same" ? minecraft_version : parchment_minecraft_version
+            minecraftVersion = "26.1"
             mappingsVersion = parchment_version
         }
     }
