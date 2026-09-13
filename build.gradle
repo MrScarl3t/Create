@@ -129,15 +129,15 @@ dependencies {
     // Required dependencies
     jarJar(api("com.tterrag.registrate:Registrate:$registrate_version"))
 
-    compileOnlyApi("dev.engine-room.flywheel:flywheel-neoforge-api-$minecraft_version:$flywheel_version")
-    jarJar(runtimeOnly("dev.engine-room.flywheel:flywheel-neoforge-$minecraft_version:$flywheel_version") {
+    compileOnlyApi("dev.engine-room.flywheel:flywheel-neoforge-api-26.1:$flywheel_version")
+    jarJar(runtimeOnly("dev.engine-room.flywheel:flywheel-neoforge-26.1:$flywheel_version") {
         version {
             strictly "[${flywheel_version},2.0)"
             prefer flywheel_version
         }
     })
 
-    jarJar(api("net.createmod.ponder:ponder-neoforge:$ponder_version+mc$minecraft_version") {
+    jarJar(api("net.createmod.ponder:ponder-neoforge:$ponder_version+mc26.1") {
         version {
             strictly "[$ponder_version+mc$minecraft_version,)"
             prefer "$ponder_version+mc$minecraft_version"
@@ -152,12 +152,12 @@ dependencies {
     compileOnly("top.theillusivec4.curios:curios-neoforge:$curios_version+$minecraft_version:api")
     localRuntimeOnly("top.theillusivec4.curios:curios-neoforge:$curios_version+$minecraft_version")
 
-    compileOnly("maven.modrinth:sodium:mc$minecraft_version-$sodium_version-neoforge")
+    compileOnly("maven.modrinth:sodium:mc26.1-$sodium_version-neoforge")
 
     if (cc_tweaked_enable.toBoolean()) {
-        compileOnly("cc.tweaked:cc-tweaked-$minecraft_version-core-api:$cc_tweaked_version")
-        compileOnly("cc.tweaked:cc-tweaked-$minecraft_version-forge-api:$cc_tweaked_version")
-        localRuntimeOnly("cc.tweaked:cc-tweaked-$minecraft_version-forge:$cc_tweaked_version")
+        compileOnly("cc.tweaked:cc-tweaked-26.1-core-api:$cc_tweaked_version")
+        compileOnly("cc.tweaked:cc-tweaked-26.1-forge-api:$cc_tweaked_version")
+        localRuntimeOnly("cc.tweaked:cc-tweaked-26.1-forge:$cc_tweaked_version")
     }
 
     compileOnly("maven.modrinth:farmers-delight:${farmers_delight_version}")
